@@ -14,16 +14,16 @@ export default function App() {
   });
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "./",
       element: <RootPage />,
       errorElement: <ErrorPage />,
       children: [
-        { path: "/", element: <MovieItems /> },
+        { path: "./", element: <MovieItems /> },
         {
-          path: `/movies/:id`,
+          path: `./movies/:id`,
           element: <MovieSummary />,
         },
-        { path: "movies/:id/form", element: <Form /> },
+        { path: "./movies/:id/form", element: <Form /> },
       ],
     },
   ]);
