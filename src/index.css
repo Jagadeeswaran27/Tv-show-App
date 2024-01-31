@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  background-color: #181717;
+  font-family: monospace;
+  color: white;
+}
+main {
+  color: white;
+}
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.no-image,
+.image {
+  transition: transform 0.25s ease-in-out;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.no-image,
+.image:hover {
+  transform: scale(1.06);
+  cursor: pointer;
+}
+.no-image {
+  width: 200px;
+  height: 250px;
+  display: grid;
+  place-items: center;
+  background-color: rgb(87, 75, 75);
+}
+.genre {
+  display: flex;
+  gap: 10px;
+}
+.genre p {
+  margin: 0;
+  padding: 0;
+}
+.summary-container {
+  color: white;
+}
+.form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
+header {
+  text-align: center;
+  background-color: #f4cb11;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 20px 0;
+  color: #181717;
+  font-size: 2rem;
+}
+header p {
+  margin: 0;
+}
+button {
+  border: none;
+  background-color: #f4cb11;
+  color: #181717;
+  padding: 7px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  margin: 20px 0;
+}
+.movie-card-main {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.summary-container {
+  width: 100%;
+  margin: 0 auto;
+}
+.selected-container {
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  gap: 40px;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.selected-container img {
+  width: 30%;
+  height: 30%;
+}
+.selected-no-image {
+  width: 300px;
+  height: 300px;
+  background-color: rgb(87, 75, 75);
+}
+.selected-container p {
+  font-size: 1.2rem;
+}
+.summary-btn-container button {
+  margin: 10px 20px;
+}
+form {
+  background-color: white;
+  color: #181717;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+}
+form div {
+  padding: 20px 30px;
+  width: 80%;
+  border: 2px solid #181717;
+  margin: 10px auto;
+}
+form div > * {
+  margin: 0 10px;
+  padding: 0 10px;
+  width: 50%;
+}
+@media (max-width: 600px) {
+  header {
+    font-size: 1.5rem;
+  }
+  .selected-container img {
+    width: 60%;
+    height: 60%;
+  }
+  .selected-container p {
+    font-size: 1rem;
+  }
+  form div {
+    width: 70%;
+  }
+  form div > * {
+    width: 90%;
+    margin: 10px 0;
+  }
+}
+@media (max-width: 738px) {
+  form {
+    width: 70%;
+  }
+}
+@media (max-width: 500px) {
+  header {
+    font-size: 1.1rem;
+  }
+  form {
+    width: 70%;
+  }
+  .selected-container img {
+    width: 80%;
+    height: 80%;
+  }
+  .selected-no-image {
+    width: 250px;
+    height: 250px;
+  }
+}
