@@ -11,6 +11,7 @@ export default function App() {
     movieData: [],
     selectedScore: null,
     isFormOpen: false,
+    isSpinnerOpen: false,
   });
   const router = createBrowserRouter([
     {
@@ -30,6 +31,12 @@ export default function App() {
   useEffect(() => {
     //this is for initially fetching all data from the api
     async function getData() {
+      setMovieState((prev) => {
+        return {
+          ...prev,
+          isFormOpen: true,
+        };
+      });
       try {
         const response = await fetch(
           "https://api.tvmaze.com/search/shows?q=all"
@@ -43,6 +50,13 @@ export default function App() {
         });
       } catch (e) {
         console.error("failed to fetch data");
+      } finally {
+        setMovieState((prev) => {
+          return {
+            ...prev,
+            isFormOpen: false,
+          };
+        });
       }
     }
     getData();
@@ -70,6 +84,7 @@ export default function App() {
     movieData: movieState.movieData,
     selectedScore: movieState.selectedScore,
     isFormOpen: movieState.isFormOpen,
+    isSpinnerOpen: movieState.isSpinnerOpen,
     handleSelectedMovie: handleSelectedMovie,
     handleSubmit: handleSubmit,
   };
