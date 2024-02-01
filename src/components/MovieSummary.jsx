@@ -4,9 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export default function MovieSummary() {
   const { movieData, isFormOpen } = useContext(AppContext);
-  console.log(movieData);
   const storeIds = JSON.parse(localStorage.getItem("selectedMovies")) || [];
-  console.log("stored id : " + storeIds);
   const filteredArray = movieData.filter((data) =>
     storeIds.includes(data.score)
   );
@@ -14,7 +12,6 @@ export default function MovieSummary() {
     const doc = new DOMParser().parseFromString(html, "text/html");
     return doc.body.textContent || "";
   }
-  console.log(filteredArray);
 
   return (
     <>

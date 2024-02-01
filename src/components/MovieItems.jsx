@@ -5,7 +5,6 @@ import LoadingSpinner from "./LoadingSpinner";
 export default function MovieItems() {
   const { movieData, handleSelectedMovie, selectedScore, isFormOpen } =
     useContext(AppContext);
-  console.log(movieData);
   return (
     <main className="movies-container">
       {isFormOpen ? (

@@ -4,11 +4,9 @@ import { NavLink } from "react-router-dom";
 export default function Form() {
   const { handleSubmit, movieData } = useContext(AppContext);
   const storeIds = JSON.parse(localStorage.getItem("selectedMovies")) || [];
-  console.log("stored id : " + storeIds);
   const filteredArray = movieData.filter((data) =>
     storeIds.includes(data.score)
   );
-  console.log(filteredArray);
   return (
     <>
       {filteredArray.map((data) => {
