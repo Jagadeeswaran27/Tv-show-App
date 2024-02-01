@@ -3,8 +3,7 @@ import { AppContext } from "../context-file/App-Context";
 import { NavLink } from "react-router-dom";
 import LoadingSpinner from "./LoadingSpinner";
 export default function MovieItems() {
-  const { movieData, handleSelectedMovie, selectedScore, isFormOpen } =
-    useContext(AppContext);
+  const { movieData, handleSelectedMovie, isFormOpen } = useContext(AppContext);
   return (
     <main className="movies-container">
       {isFormOpen ? (
@@ -13,9 +12,9 @@ export default function MovieItems() {
         movieData.map((data) => {
           const image = data.show.image;
           return (
-            <NavLink to={`/movies/${data.score}`} key={data.score}>
+            <NavLink to={`/movies/${data.show.id}`} key={data.show.id}>
               <div
-                onClick={() => handleSelectedMovie(data.score)}
+                onClick={() => handleSelectedMovie(data.show.id)}
                 className="movie-card-main"
               >
                 <div>

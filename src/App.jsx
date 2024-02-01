@@ -9,7 +9,7 @@ import Form from "./components/Form";
 export default function App() {
   const [movieState, setMovieState] = useState({
     movieData: [],
-    selectedScore: null,
+    selectedId: null,
     isFormOpen: false,
     isSpinnerOpen: false,
   });
@@ -61,19 +61,16 @@ export default function App() {
     }
     getData();
   }, []);
-  function handleSelectedMovie(score) {
+  function handleSelectedMovie(id) {
     setMovieState((prev) => {
       return {
         ...prev,
-        selectedScore: score,
+        selectedId: id,
       };
     });
     const storeIds = JSON.parse(localStorage.getItem("selectedMovie")) || [];
-    if (storeIds.indexOf(score) === -1) {
-      localStorage.setItem(
-        "selectedMovies",
-        JSON.stringify([...storeIds, score])
-      );
+    if (storeIds.indexOf(id) === -1) {
+      localStorage.setItem("selectedMovies", JSON.stringify([...storeIds, id]));
     }
   }
   function handleSubmit(e) {

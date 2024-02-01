@@ -5,7 +5,7 @@ export default function Form() {
   const { handleSubmit, movieData } = useContext(AppContext);
   const storeIds = JSON.parse(localStorage.getItem("selectedMovies")) || [];
   const filteredArray = movieData.filter((data) =>
-    storeIds.includes(data.score)
+    storeIds.includes(data.show.id)
   );
   return (
     <>

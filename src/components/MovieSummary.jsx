@@ -3,10 +3,10 @@ import { AppContext } from "../context-file/App-Context";
 import { NavLink } from "react-router-dom";
 
 export default function MovieSummary() {
-  const { movieData, isFormOpen } = useContext(AppContext);
+  const { movieData } = useContext(AppContext);
   const storeIds = JSON.parse(localStorage.getItem("selectedMovies")) || [];
   const filteredArray = movieData.filter((data) =>
-    storeIds.includes(data.score)
+    storeIds.includes(data.show.id)
   );
   function stripHtmlTags(html) {
     const doc = new DOMParser().parseFromString(html, "text/html");
