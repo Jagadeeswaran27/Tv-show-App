@@ -22,7 +22,9 @@ export default function Form() {
             </div>
             <div>
               <label>Premiered</label>
-              <input defaultValue={data.show.premiered} />
+              <input
+                defaultValue={data.show.premiered || "data not provided"}
+              />
             </div>
             <div>
               <label>Ended</label>
