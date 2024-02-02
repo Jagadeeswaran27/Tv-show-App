@@ -14,35 +14,40 @@ export default function Form() {
           <form key={data.score} onSubmit={handleSubmit}>
             <div>
               <label>Title</label>
-              <input type="text" defaultValue={data.show.name} />
+              <input type="text" defaultValue={data.show.name} readOnly />
             </div>
             <div>
               <label>Language</label>
-              <input type="text" defaultValue={data.show.language} />
+              <input type="text" defaultValue={data.show.language} readOnly />
             </div>
             <div>
               <label>Premiered</label>
               <input
                 defaultValue={data.show.premiered || "data not provided"}
+                readOnly
               />
             </div>
             <div>
               <label>Ended</label>
-              <input defaultValue={data.show.ended || "ongoing"} />
+              <input defaultValue={data.show.ended || "ongoing"} readOnly />
             </div>
             <div>
               <label>Runtime</label>
-              <input defaultValue={data.show.runtime || "not provied"} />
+              <input
+                defaultValue={data.show.runtime || "not provied"}
+                readOnly
+              />
             </div>
             <div>
               <label>Rating</label>
               <input
                 defaultValue={data.show.rating.average || "not yet rated!"}
+                readOnly
               />
             </div>
             <div>
               <label>Type</label>
-              <input defaultValue={data.show.type} />
+              <input defaultValue={data.show.type} readOnly />
             </div>
             <button type="button">submit</button>
             <NavLink to={`/movies/${selectedId}`}>
