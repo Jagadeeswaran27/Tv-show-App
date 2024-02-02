@@ -9,7 +9,6 @@ import Form from "./components/Form";
 export default function App() {
   const [movieState, setMovieState] = useState({
     movieData: [],
-    selectedId: null,
     isFormOpen: false,
     isSpinnerOpen: false,
   });
@@ -62,12 +61,6 @@ export default function App() {
     getData();
   }, []);
   function handleSelectedMovie(id) {
-    setMovieState((prev) => {
-      return {
-        ...prev,
-        selectedId: id,
-      };
-    });
     const storeIds = JSON.parse(localStorage.getItem("selectedMovie")) || [];
     if (storeIds.indexOf(id) === -1) {
       localStorage.setItem("selectedMovies", JSON.stringify([...storeIds, id]));
@@ -79,7 +72,6 @@ export default function App() {
 
   const ctxValue = {
     movieData: movieState.movieData,
-    selectedId: movieState.selectedId,
     isFormOpen: movieState.isFormOpen,
     isSpinnerOpen: movieState.isSpinnerOpen,
     handleSelectedMovie: handleSelectedMovie,
