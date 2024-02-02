@@ -3,7 +3,8 @@ import { AppContext } from "../context-file/App-Context";
 import { NavLink } from "react-router-dom";
 import LoadingSpinner from "./LoadingSpinner";
 export default function MovieItems() {
-  const { movieData, handleSelectedMovie, isFormOpen } = useContext(AppContext);
+  const { movieData, handleSelectedMovie, isFormOpen, selectedId } =
+    useContext(AppContext);
   return (
     <main className="movies-container">
       {isFormOpen ? (

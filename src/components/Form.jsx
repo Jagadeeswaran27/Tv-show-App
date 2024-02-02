@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../context-file/App-Context";
 import { NavLink } from "react-router-dom";
 export default function Form() {
-  const { handleSubmit, movieData } = useContext(AppContext);
+  const { handleSubmit, movieData, selectedId } = useContext(AppContext);
   const storeIds = JSON.parse(localStorage.getItem("selectedMovies")) || [];
   const filteredArray = movieData.filter((data) =>
     storeIds.includes(data.show.id)
@@ -45,7 +45,7 @@ export default function Form() {
               <input defaultValue={data.show.type} />
             </div>
             <button type="button">submit</button>
-            <NavLink to="/movies/:id">
+            <NavLink to={`/movies/${selectedId}`}>
               <button>Go Back</button>
             </NavLink>
           </form>

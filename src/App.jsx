@@ -79,7 +79,7 @@ export default function App() {
 
   const ctxValue = {
     movieData: movieState.movieData,
-    selectedScore: movieState.selectedScore,
+    selectedId: movieState.selectedId,
     isFormOpen: movieState.isFormOpen,
     isSpinnerOpen: movieState.isSpinnerOpen,
     handleSelectedMovie: handleSelectedMovie,
