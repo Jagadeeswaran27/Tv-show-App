@@ -10,7 +10,6 @@ export default function App() {
   const [movieState, setMovieState] = useState({
     movieData: [],
     isFormOpen: false,
-    isSpinnerOpen: false,
   });
   const router = createBrowserRouter([
     {
@@ -73,7 +72,6 @@ export default function App() {
   const ctxValue = {
     movieData: movieState.movieData,
     isFormOpen: movieState.isFormOpen,
-    isSpinnerOpen: movieState.isSpinnerOpen,
     handleSelectedMovie: handleSelectedMovie,
     handleSubmit: handleSubmit,
   };
